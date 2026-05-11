@@ -30,4 +30,3 @@ A robust, modular Command-Line Interface (CLI) application built with **Python**
 ### Setup
 1. Clone the repository
 2. Run the application
-3. 
