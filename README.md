@@ -18,3 +18,16 @@ The project is structured into four distinct modules to ensure scalability and m
 2.  **`expense.py`**: The **Data Model**. Defines the `Expense` class blueprint and ensures consistent data structure.
 3.  **`fileHandler.py`**: The **Storage Layer**. Handles all CRUD operations (Create/Read) with the CSV file.
 4.  **`reports.py`**: The **Logic Layer**. Processes raw data to compute totals and filter spending by date.
+# 💰 Expense Tracker CLI
+
+A robust, modular Command-Line Interface (CLI) application built with **Python**. This project implements **Object-Oriented Programming (OOP)** and **Data Persistence** to help users track daily spending through a menu-driven interface.
+
+## 💻 Installation & Usage
+
+### Prerequisites
+* Python 3.10 or higher installed.
+
+### Setup
+1. Clone the repository
+2. Run the application
+3. 
