@@ -13,7 +13,7 @@ def saveExp(amount, category, note):
                 writer.writerow(["Date", "Category", "Amount", "Note"])
             writer.writerow([date, category, amount, note])
     except Exception as e:
-        print("an err occurred : {e}")
+        print(f"an err occurred : {e}")
 
 def loadExp():
     expList = []
