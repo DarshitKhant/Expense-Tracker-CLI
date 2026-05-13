@@ -1,6 +1,7 @@
 from fileHandler import loadExp, saveExp
 from reports import monthlySummary
 
+
 def showMainMenu():
     print("\n1. Add expense")
     print("2. View all expenses")
@@ -19,7 +20,7 @@ def addNewExp():
     try:
         amt = int(input("Enter Amt :"))
         if amt<0:
-            print("✗ Amount cannot be negative.")
+            print("Amount cannot be negative.")
             return
     except ValueError:
         print("Invalid amount. Please enter a number.")
@@ -62,6 +63,22 @@ def showSummary():
 print("============================")
 print("Expense Tracker v1.0")
 print("============================")
+
+budget = -1
+choice = input("want to set monthly budget? (Y/N): ")
+if choice.lower() == "y":
+    while True:
+        try:
+            budget = int(input("Enter budget: "))
+            if budget < 0:
+                print("Cannot be negative.")
+            else:
+                with open("BudgetFile.txt","w") as file:
+                    file.write(str(budget))
+                print(f"Budget set to {budget}")
+                break
+        except ValueError:
+            print("Enter a valid number.")
 
 while(True):
     showMainMenu()

@@ -13,5 +13,9 @@ def monthlySummary(month, year):
     print("\nBreakdown by Category:")
     for categ, amt in categoryTotal.items():
         print(f"- {categ}: {amt}")
-
-
+    with open("BudgetFile.txt","r") as file:
+        budget=int(file.read())
+        if budget != -1 and total>budget:
+            print("You have exceeded your monthly budget!")
+            print(f"Budget: {budget} | Spent: {total} | Over by: {total-budget}") 
+    
