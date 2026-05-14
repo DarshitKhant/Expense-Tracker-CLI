@@ -1,5 +1,6 @@
 from fileHandler import loadExp, saveExp
 from reports import monthlySummary
+import os
 
 
 def showMainMenu():
@@ -64,21 +65,23 @@ print("============================")
 print("Expense Tracker v1.0")
 print("============================")
 
-budget = -1
-choice = input("want to set monthly budget? (Y/N): ")
-if choice.lower() == "y":
-    while True:
-        try:
-            budget = int(input("Enter budget: "))
-            if budget < 0:
-                print("Cannot be negative.")
-            else:
-                with open("BudgetFile.txt","w") as file:
-                    file.write(str(budget))
-                print(f"Budget set to {budget}")
-                break
-        except ValueError:
-            print("Enter a valid number.")
+
+if os.path.getsize("BudgetFile.txt") == 0:
+    budget = -1
+    choice = input("want to set monthly budget? (Y/N): ")
+    if choice.lower() == "y":
+        while True:
+            try:
+                budget = int(input("Enter budget: "))
+                if budget < 0:
+                    print("Cannot be negative.")
+                else:
+                    with open("BudgetFile.txt","w") as file:
+                        file.write(str(budget))
+                    print(f"Budget set to {budget}")
+                    break
+            except ValueError:
+                print("Enter a valid number.")
 
 while(True):
     showMainMenu()
